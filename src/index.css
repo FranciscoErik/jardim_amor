@@ -1,0 +1,99 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 346 80% 98%;
+    --foreground: 346 10% 20%;
+
+    --card: 345 60% 98%;
+    --card-foreground: 346 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 346 10% 20%;
+
+    --primary: 346 80% 70%;
+    --primary-foreground: 346 10% 98%;
+
+    --secondary: 280 60% 85%;
+    --secondary-foreground: 280 10% 20%;
+
+    --muted: 346 20% 92%;
+    --muted-foreground: 346 10% 50%;
+
+    --accent: 124 50% 88%;
+    --accent-foreground: 124 20% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 346 30% 86%;
+    --input: 346 30% 86%;
+    --ring: 346 60% 80%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-quicksand;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-dancing-script;
+  }
+}
+
+@layer utilities {
+  .font-dancing-script {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-quicksand {
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .bg-gradient-love {
+    background: linear-gradient(135deg, #f8e1ea 0%, #f0e5fa 50%, #e5f5f9 100%);
+  }
+}
+
+.flower-particle {
+  position: absolute;
+  pointer-events: none;
+  animation: flower-fall linear forwards;
+}
+
+@keyframes flower-fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
